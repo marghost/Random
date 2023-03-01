@@ -1,0 +1,32 @@
+#Download ImgBurn
+#Used to insert virtio drivers inside the windows 10 iso
+#Config to create iso correctly are made inside "Folder to iso" and then Advanced > Bootable Disc
+
+#Follow instructions and use ImgBurn
+# https://www.vultr.com/docs/windows-custom-iso-with-virtio-drivers
+
+
+
+    Get the latest binary VirtIO drivers for Windows, packaged as an ISO file, from https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+
+    Make a folder: c:\custom.
+
+    Extract your Windows Server ISO to: c:\custom\winserver with a compression tool such as 7zip http://www.7-zip.org/.
+
+    Extract the VirtIO ISO to c:\custom\winserver\virtio.
+
+    Use an ISO mastering tool to create your custom slipstream ISO. In general, the following mastering options are needed:
+
+    Filesystem: UDF, Include Hidden Files, Include System Files
+
+    Make image bootable.
+
+    Emulation Type: none
+
+    Boot Image: C:\custom\winserver\boot\etfsboot.com
+
+    Platform ID: 80x86
+
+    Developer ID: Microsoft Corporation
+
+    Sectors to load: 8
